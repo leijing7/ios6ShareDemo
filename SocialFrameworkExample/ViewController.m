@@ -9,7 +9,6 @@
 #import "ViewController.h"
 
 #import <Social/Social.h>
-#import <Accounts/Accounts.h>
 
 @interface ViewController ()
 
@@ -180,7 +179,6 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Weibo Message" message:output delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
         [alert show];
     }];
-
 }
 
 - (IBAction)shareByActivity:(id)sender {

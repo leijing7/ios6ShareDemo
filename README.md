@@ -1,10 +1,9 @@
-<<<<<<< HEAD
 # ios6ShareDemo 
 
 ## Overview
 
 **ios6ShareDemo** is a demo project for the iOS6 SocialFramework. It demonstates how to share image and text by SLComposeViewController and/or UIActivityViewController.
-Thanks for the iOS6 Social.framework, you can share image, text and URL by just several lines code.
+Thanks for the iOS6 Social.framework, you can share image, text and URL to Sina weibo, facebook, twitter and more by just several lines code.
 
 Note:
 This demo only works with iOS6.
@@ -18,10 +17,4 @@ This demo only works with iOS6.
 * Frameworks: Foundation, UIKit, CoreGraphics, Social
 * Support iPhone5 
 
-
-=======
-ios6ShareDemo
-=============
-
-This is a demo project for the iOS6 SocialFramework. Share the image and picture very easily.
 
