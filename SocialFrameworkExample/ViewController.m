@@ -9,6 +9,7 @@
 #import "ViewController.h"
 
 #import <Social/Social.h>
+#import <ACCOUNTS/ACAccount.h>
 
 @interface ViewController ()
 
@@ -119,13 +120,36 @@
             default:
                 break;
         }
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Facebook Message" message:output delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-        [alert show];
+        if (result != SLComposeViewControllerResultCancelled)
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Facebook Message" message:output delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+            [alert show];
+        }
     }];
 
 }
 
 - (IBAction)shareToTwitter:(id)sender {
+    [slComposerSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
+        NSLog(@"start completion block");
+        NSString *output;
+        switch (result) {
+            case SLComposeViewControllerResultCancelled:
+                output = @"Action Cancelled";
+                break;
+            case SLComposeViewControllerResultDone:
+                output = @"Post Successfull";
+                break;
+            default:
+                break;
+        }
+        if (result != SLComposeViewControllerResultCancelled)
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Twitter Message" message:output delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+            [alert show];
+        }
+    }];
+    
     if([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
     {
         slComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
@@ -134,7 +158,9 @@
         [slComposerSheet addURL:[NSURL URLWithString:@"http://www.twitter.com/"]];
         [self presentViewController:slComposerSheet animated:YES completion:nil];
     }
-    
+}
+
+- (IBAction)shareToWeibo:(id)sender {
     [slComposerSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
         NSLog(@"start completion block");
         NSString *output;
@@ -148,12 +174,13 @@
             default:
                 break;
         }
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Twitter Message" message:output delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-        [alert show];
-    }];    
-}
-
-- (IBAction)shareToWeibo:(id)sender {
+        if (result != SLComposeViewControllerResultCancelled)
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Weibo Message" message:output delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+            [alert show];
+        }
+    }];
+    
     if([SLComposeViewController isAvailableForServiceType:SLServiceTypeSinaWeibo])
     {
         slComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeSinaWeibo];
@@ -161,24 +188,7 @@
         [slComposerSheet addImage:self.sharingImage];
         [slComposerSheet addURL:[NSURL URLWithString:@"http://www.weibo.com/"]];
         [self presentViewController:slComposerSheet animated:YES completion:nil];
-    }
-    
-    [slComposerSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
-        NSLog(@"start completion block");
-        NSString *output;
-        switch (result) {
-            case SLComposeViewControllerResultCancelled:
-                output = @"Action Cancelled";
-                break;
-            case SLComposeViewControllerResultDone:
-                output = @"Post Successfull";
-                break;
-            default:
-                break;
-        }
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Weibo Message" message:output delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-        [alert show];
-    }];
+    }       
 }
 
 - (IBAction)shareByActivity:(id)sender {

@@ -20,6 +20,7 @@
 		34C9E5951623BD1F0092234E /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34C9E5931623BD1F0092234E /* ViewController_iPhone.xib */; };
 		34C9E59F1623BE810092234E /* ios6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 34C9E59E1623BE810092234E /* ios6.jpg */; };
 		34C9E5A11623C3D10092234E /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C9E5A01623C3D00092234E /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		34C9E5A51624F9050092234E /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C9E5A41624F9050092234E /* Accounts.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		34C9E5941623BD1F0092234E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
 		34C9E59E1623BE810092234E /* ios6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ios6.jpg; sourceTree = "<group>"; };
 		34C9E5A01623C3D00092234E /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		34C9E5A41624F9050092234E /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34C9E5A51624F9050092234E /* Accounts.framework in Frameworks */,
 				34C9E5A11623C3D10092234E /* Social.framework in Frameworks */,
 				34C9E5791623BD1E0092234E /* UIKit.framework in Frameworks */,
 				34C9E57B1623BD1E0092234E /* Foundation.framework in Frameworks */,
@@ -78,6 +81,7 @@
 		34C9E5771623BD1E0092234E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				34C9E5A41624F9050092234E /* Accounts.framework */,
 				34C9E5A01623C3D00092234E /* Social.framework */,
 				34C9E5781623BD1E0092234E /* UIKit.framework */,
 				34C9E57A1623BD1E0092234E /* Foundation.framework */,
